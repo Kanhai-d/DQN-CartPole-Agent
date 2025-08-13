@@ -1,25 +1,25 @@
 # Autonomous Agent for CartPole-v1 using Deep Q-Networks (DQN)
 
-This project demonstrates the implementation of a **Deep Q-Network (DQN)** agent to solve the classic **CartPole-v1** environment from Gymnasium. The agent learns to balance a pole on a cart by applying forces to move the cart left or right.
+This project showcases a reinforcement learning agent built to master the classic **CartPole-v1** challenge from the Gymnasium library.  
+In this environment, a pole is attached to a moving cart, and the agent must learn to apply forces to the cart to keep the pole balanced for as long as possible.
 
-##  Key Features
-- **Reinforcement Learning:** Implements a Deep Q-Network (DQN) to learn an optimal policy.
-- **Experience Replay:** Utilizes a replay buffer to stabilize training and improve sample efficiency.
-- **Target Network:** Employs a separate target network to provide a stable learning target.
-- **Epsilon-Greedy Policy:** Balances exploration and exploitation to discover the environment's dynamics.
-- **PyTorch Implementation:** Built entirely using the PyTorch deep learning framework.
+## Project Overview
+The agent is trained using a **Deep Q-Network (DQN)** — a deep learning approach that estimates action values (Q-values) and learns the optimal policy for balancing the pole.  
+Training involves repeatedly playing the game, collecting experiences, and improving the decision-making policy over time.
 
-##  How to Run the Project
+### Key Concepts Used
+- **Deep Q-Network (DQN)**: A neural network that approximates the Q-value function for each possible action.
+- **Experience Replay**: Stores past experiences in a replay buffer and samples them randomly to break correlations in training data.
+- **Target Network**: A separate network to stabilize learning updates.
+- **Epsilon-Greedy Policy**: Balances exploration of new strategies and exploitation of known strategies.
+- **PyTorch Framework**: Used to design, train, and evaluate the neural network.
 
-### Prerequisites
-- Python 3.8+
-- The following libraries (install with `pip install -r requirements.txt`):
-  - gymnasium
-  - torch
-  - matplotlib
-  - numpy
+## Learning Process
+1. The environment provides the agent with its current state (cart position, velocity, pole angle, and angular velocity).
+2. The agent selects an action (push left or push right) based on the policy.
+3. The environment returns the next state and a reward.
+4. The agent stores this experience and uses it to improve its policy over many episodes.
 
-### Training the Agent
-To train the agent and save the model weights, simply run the main script:
-```bash
-python main.py
+## Outcome
+After sufficient training, the agent learns a policy that keeps the pole balanced for the maximum allowed duration in the environment.  
+The project demonstrates the core principles of reinforcement learning in a simple, visual, and engaging task.
